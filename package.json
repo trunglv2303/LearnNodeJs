@@ -1,0 +1,27 @@
+{
+  "name": "full-backend",
+  "version": "1.0.0",
+  "description": "Hello world",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trunglv2303/LearnNodeJs.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trunglv2303/LearnNodeJs/issues"
+  },
+  "homepage": "https://github.com/trunglv2303/LearnNodeJs#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
