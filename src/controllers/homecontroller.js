@@ -1,12 +1,26 @@
-const connection=require('../config/database')
+const connection = require('../config/database')
 
-const getHomepage=(req,res)=>{
+const getHomepage = (req, res) => {
     return res.render('home.ejs')
 }
-const getinfo=(req,res)=>{
-    // res.send('Hello world with by Le Van Trung');
-
+const create_user = (req, res) => {
+    console.log('>>> reg.body:', req.body)
+    let fname = req.body.fname;
+    let email = req.body.email;
+    let address = req.body.address;
+    connection.query(
+        ` INSERT INTO Users(email,name,city)
+VALUES(?,?,?) `
+        , [email, fname, address],
+        function (err, results) {
+            console.log(results);
+            res.send('create use succers')
+        }
+    )
 }
-module.exports={
-    getHomepage,getinfo
+const getcreatepage=(req,res)=>{
+    res.render('create.ejs')
+}
+module.exports = {
+    getHomepage, create_user,getcreatepage
 }

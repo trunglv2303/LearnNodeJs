@@ -7,6 +7,8 @@ const connection=require('./config/database')
 const configViewEngine=require('./config/viewEngine')
 const port = process.env.PORT || 8888;
 const hostname= process.env.HOST_NAME;
+app.use(express.json());
+app.use(express.urlencoded({extend: true }));
 const router = express.Router();
 console.log(process.env.DB_HOST)
 connection.query('SELECT * FROM Users',
@@ -19,5 +21,5 @@ app.listen(port,hostname, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-app.use('/hi',webRouter)
+app.use('/',webRouter)
 
