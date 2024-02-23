@@ -1,6 +1,7 @@
 // khai baos bien mysql  từ thư viện mysql2
-const mysql = require('mysql2');
-const connection = mysql.createConnection({
+require('dotenv').config()
+const mysql = require('mysql2/promise');
+const connection = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,

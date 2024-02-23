@@ -11,11 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({extend: true }));
 const router = express.Router();
 console.log(process.env.DB_HOST)
-connection.query('SELECT * FROM Users',
-function(err, results,fields){
-  // console.log(">>>results-",results);
-  // console.log(">>>fields=",fields);
-})
+
 configViewEngine(app);
 app.listen(port,hostname, () => {
   console.log(`Example app listening on port ${port}`)
